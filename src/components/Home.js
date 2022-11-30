@@ -1,6 +1,7 @@
+import React from "react";
 import featImg from "../assets/img-main.jpg";
 
-export default function Home({ title }) {
+function Home() {
   return (
     <div className="container">
       <img
@@ -8,9 +9,9 @@ export default function Home({ title }) {
         src={featImg}
         alt="Red30 Tech conference attendees on a laptop"
       />
-
-      <h1>{title}</h1>
+      <h1>Welcome</h1>
       <p>
+        {" "}
         This is a fictitious company and conference created by{" "}
         <a
           href="https://www.linkedin.com/feed/"
@@ -29,3 +30,5 @@ export default function Home({ title }) {
     </div>
   );
 }
+
+export default Home;
