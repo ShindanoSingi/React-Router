@@ -8,6 +8,7 @@ import About from "./About";
 import Header from "./Header";
 import Session from "./Session";
 import Register from "./Register";
+import Confirmation from "./Confirmation";
 
 
 function App() {
@@ -23,6 +24,7 @@ const[catId, setCatId] = useState(null)
         <Route path="/" element={<Home title="Welcome to Red30 Tech" />} />
         <Route path="about" element={<About />} />
         <Route path="register" element={<Register />} />
+        <Route path="confirmation" element={<Confirmation />} />
         <Route path="categories" element={<Categories />}>
           <Route path=":catId" element={<Category getCatId={getCatId} />}>
             <Route path=":sessionId" element={<Session catId={catId}/>} />
