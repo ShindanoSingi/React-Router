@@ -74,7 +74,7 @@ nav a {
   text-decoration: none;
 }
 
-nav a:hover, 
+nav a:hover,
 .nav-active {
   color: #5dabaa;
 }
@@ -85,7 +85,7 @@ nav a:hover,
   text-decoration: none;
   padding: 0.25em 0.4em;
 }
-.categories a:hover, 
+.categories a:hover,
 a.category-active {
   color: #fff;
   background-color: #605e5e;
@@ -101,7 +101,7 @@ a.category-active {
   border-radius: 3px;
 }
 
-.session a:hover, 
+.session a:hover,
 a.session-active {
   color: #489b9a;
 }
@@ -196,6 +196,11 @@ header {
   margin-right: 0.35em;
 }
 
+.not-found::after {
+  content: "😕";
+  margin-left: 0.35em;
+}
+
 footer.container {
   padding: 2.25em 0;
   margin-top: auto;
@@ -216,11 +221,11 @@ footer.container {
 }
 
 @media (min-width: 768px) {
-  header, 
+  header,
   nav {
     display: flex;
     align-items: center;
-  } 
+  }
   header.container {
     margin-bottom: 1em;
   }
