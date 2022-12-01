@@ -1,11 +1,16 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, Outlet, useParams } from "react-router-dom";
 import { getCategory } from "../api";
 
-export default function Category() {
+
+
+export default function Category({getCatId}) {
+
+    const getClass = ({isActive}) => isActive?"category-active":null
   const { catId } = useParams();
   const category = getCategory(catId);
-  console.log(category)
+  getCatId(catId)
+//   console.log(category)
   return (
     <>
       <h2>{category.name} Sessions</h2>
@@ -13,13 +18,17 @@ export default function Category() {
       <ul className="session-list">
         {category?.sessions.map((session) => (
           <li className="session" key={session.id}>
-            <p className="session-name">{session.name}</p>
+          <NavLink to={session.id} className={getClass} >
+            <p className="session-name">
+                {session.name}
+            </p>
             <p>
               {session.speaker.name} | {session.speaker.org}
-            </p>
+            </p> </NavLink>
           </li>
         ))}
       </ul>
+    <Outlet/>
     </>
   );
 }
